@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 public class ConfigApp2 {
     @Bean
     String str(){
-        return "Full time Mentor";
+        return " Mentor is created ";
     }
 
     @Bean

@@ -8,11 +8,18 @@ public class TomatoApp {
 
         ApplicationContext container = new AnnotationConfigApplicationContext(ConfigApp.class,ConfigApp2.class);
 
-           FullTimeMentor ftm = container.getBean(FullTimeMentor.class);
-           ftm.createAccount();
+           PartTimeMentor pt = container.getBean("pt",PartTimeMentor.class);
+           PartTimeMentor primary = container.getBean(PartTimeMentor.class);
+           pt.createAccount();
+           primary.createAccount();
 
-       String str = container.getBean(String.class);
-        System.out.println(str);
+           FullTimeMentor ft1 = container.getBean("John",FullTimeMentor.class);
+           ft1.createAccount();
+           // throws .NoUniqueBeanDefinitionException cause bean without name nor primary tagged
+          // FullTimeMentor ft2 = container.getBean(FullTimeMentor.class);
+
+           String str = container.getBean(String.class);
+           System.out.println(str);
 
 
 
