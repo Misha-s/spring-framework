@@ -10,16 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/full-time")
-public class MentorController {
+@RequestMapping("/part-time")
+public class PartTimeMentorController {
 
     @RequestMapping("/mentor")
     public String displayMentors(Model model){
-
         List<Mentor> mentorsList = new ArrayList<>();
-        mentorsList.add(new Mentor("Mike","Smith",45,Gender.MALE));
-        mentorsList.add(new Mentor("Tom","Hanks",65,Gender.MALE));
-        mentorsList.add(new Mentor("Ammy","Bryan",25,Gender.FEMALE));
+        mentorsList.add(new Mentor("Jack","Drew",35, Gender.MALE));
+        mentorsList.add(new Mentor("Tamara","Hanks",53,Gender.FEMALE));
+        mentorsList.add(new Mentor("Ammy","Bryan",42,Gender.FEMALE));
         model.addAttribute("mentors",mentorsList);
         return "mentor/mentor";
     }
