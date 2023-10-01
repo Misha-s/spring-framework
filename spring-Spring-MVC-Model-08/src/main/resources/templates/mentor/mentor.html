@@ -20,7 +20,10 @@
     </thead>
     <tbody>
     <tr th:each="mentor:${mentors}">
-        <td th:text="${mentor.getFirsName()+'  |   '+mentor.getLastName()+'  |   '+ mentor.getAge()+'   |  '+mentor.getGender()}"></td>
+        <td th:text="${mentor.getFirsName()}"></td>
+        <td th:text="${mentor.getLastName()}"></td>
+        <td th:text="${mentor.getAge()}"></td>
+        <td th:text="${mentor.getGender()}"></td>
     </tr>
 <!--    <tr>-->
 <!--        <td th:each="mentor:${mentors}" th:text="${mentor.getLastName()}"></td>-->
