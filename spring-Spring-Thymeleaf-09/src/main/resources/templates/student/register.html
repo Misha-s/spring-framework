@@ -14,5 +14,14 @@
 <br>
 <a th:href="@{/student/welcome}">Welcome page</a>
 
+<!--adding parameters-->
+<a th:href="@{/student/welcome(id=3)}">link 1</a>
+<a th:href="@{/student/welcome(id=${student.get(0).getFirstName()})}">link 2</a>
+
+<!--Iteration-->
+<h3> Students list</h3>
+<ul>
+    <li th:each="students: ${student}" th:text="${students.getFirstName()+' '+students.lastName}">Students list</li>
+</ul>
 </body>
 </html>
