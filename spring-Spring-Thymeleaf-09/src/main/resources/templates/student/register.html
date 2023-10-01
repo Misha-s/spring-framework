@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Welcome New Student</h2>
+<h2 th:text="${'First name '+student.get(0).getFirstName()}"></h2>
+<h2 th:text="${'Last name '+ student.get(0).getLastName()}"></h2>
+<h2 th:text="${'Age '+student.get(0).getAge()}"></h2>
+<!--links-->
+<a th:href="@{https://amazon.com}">Amazon page</a>
+<br>
+<a th:href="@{/student/welcome}">Welcome page</a>
+
+</body>
+</html>
