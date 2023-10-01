@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.app2</groupId>
-    <artifactId>spring-Spring-MVS-Model-08</artifactId>
+    <artifactId>spring-Spring-MVC-Model-08</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-Spring-MVS-Model-08</name>
     <description>spring-Spring-MVS-Model-08</description>
