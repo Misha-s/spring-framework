@@ -5,10 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+
 <h2>Welcome New Student</h2>
 <h2 th:text="${'First name '+student.get(0).getFirstName()}"></h2>
 <h2 th:text="${'Last name '+ student.get(0).getLastName()}"></h2>
 <h2 th:text="${'Age '+student.get(0).getAge()}"></h2>
+
 <!--links-->
 <a th:href="@{https://amazon.com}">Amazon page</a>
 <br>
@@ -23,5 +25,17 @@
 <ul>
     <li th:each="students: ${student}" th:text="${students.getFirstName()+' '+students.lastName}">Students list</li>
 </ul>
+
+<!--Fragments-->
+<div th:replace="/fragments/index::footer-menu"></div>
+<div th:replace="/fragments/index::main-menu"></div>
+
+<!--Conditional logic-->
+<div th:text="${student.get(0).age > 35 ? 'Eligible':'Not Eligible'}"></div>
+
+<div>
+    <span th:if="${student.get(0).state=='Arizona'}">Arizona</span>
+    <span th:unless="${student.get(0).state=='Arizona'}">Not Arizona</span>
+</div>
 </body>
 </html>
