@@ -8,7 +8,7 @@
 <body>
 
 
-<form th:object="${mentor}">
+<form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
 
   <label>First Name:</label>
   <input type="text" id="firstName" th:field="*{firstName}"><br>
@@ -20,7 +20,7 @@
   <input type="text" id="email" th:field="*{email}"><br>
 
   <label>Graduated:</label>
-  <input type="checkbox" value="" th:field="*{graduated}"><br>
+  <input type="checkbox" th:field="*{graduated}"><br>
 
   <label>Gender:</label>
   <input type="radio" value="Male" th:field="*{gender}">Male
