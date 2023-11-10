@@ -28,6 +28,10 @@ public class Employees extends BaseEntity {
     @JoinColumn(name = "department_id")
     private Departments departments;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "region_id ")
+    private Region regions;
+
     public Employees(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, BigDecimal salary) {
         this.firstName = firstName;
         this.lastName = lastName;

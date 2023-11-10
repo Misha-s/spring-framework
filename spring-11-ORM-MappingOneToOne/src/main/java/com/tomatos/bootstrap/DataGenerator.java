@@ -1,6 +1,7 @@
 package com.tomatos.bootstrap;
 import com.tomatos.entity.Departments;
 import com.tomatos.entity.Employees;
+import com.tomatos.entity.Region;
 import com.tomatos.enums.Gender;
 import com.tomatos.repository.DeptRepository;
 import com.tomatos.repository.EmplRepository;
@@ -40,10 +41,18 @@ public class DataGenerator implements CommandLineRunner {
         Employees emp3 = new Employees("Aston","Duncan","Dunkan@gmail.com", LocalDate.of(2023,07,25), Gender.MALE, BigDecimal.valueOf(189000));
         Employees emp4 = new Employees("Jackie","Trent","trent@gmail.com", LocalDate.of(2023,12,13), Gender.MALE, BigDecimal.valueOf(155000));
 
+        Region region1 = new Region("SouthWest","USA");
+        Region region2 = new Region("CA","USA");
+        Region region3 = new Region("CT","USA");
+
         emp1.setDepartments(dept1);
         emp2.setDepartments(dept2);
         emp3.setDepartments(dept3);
         emp4.setDepartments(dept4);
+
+        emp1.setRegions(region1);
+        emp2.setRegions(region2);
+        emp3.setRegions(region3);
 
         employeeList.addAll(Arrays.asList(emp1,emp2,emp3,emp4));
         deptList.addAll(Arrays.asList(dept1,dept2,dept3,dept4));
