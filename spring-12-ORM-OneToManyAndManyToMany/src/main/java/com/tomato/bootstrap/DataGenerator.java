@@ -1,8 +1,10 @@
 package com.tomato.bootstrap;
 
+import com.tomato.entity.Merchant;
 import com.tomato.entity.Payment;
 import com.tomato.entity.PaymentDetail;
 import com.tomato.enums.PaymentStatus;
+import com.tomato.repository.MerchantRepository;
 import com.tomato.repository.PaymentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,9 +17,11 @@ import java.util.List;
 @Component
 public class DataGenerator implements CommandLineRunner {
     PaymentRepository paymentRepository;
+    MerchantRepository merchantRepository;
 
-    public DataGenerator(PaymentRepository paymentRepository) {
+    public DataGenerator(PaymentRepository paymentRepository,MerchantRepository merchantRepository) {
         this.paymentRepository = paymentRepository;
+        this.merchantRepository = merchantRepository;
     }
 
     @Override
@@ -37,7 +41,12 @@ public class DataGenerator implements CommandLineRunner {
         payment2.setPaymentDetail(paymentDetail2);
         payment3.setPaymentDetail(paymentDetail3);
 
+        Merchant merchant1 = new Merchant("Adidas","S231",new BigDecimal("0.77"),new BigDecimal("3.25"),1);
 
+        payment1.setMerchant(merchant1);
+        payment2.setMerchant(merchant1);
+
+        merchantRepository.save(merchant1);
 
 
 
