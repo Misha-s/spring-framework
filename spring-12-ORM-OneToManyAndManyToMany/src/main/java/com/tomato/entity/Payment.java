@@ -28,6 +28,9 @@ public class Payment{
     @ManyToOne
     private Merchant merchant;
 
+    @ManyToOne
+    private Customer customer;
+
 
     public Payment(BigDecimal amount, LocalDate createdDate, PaymentStatus paymentStatus) {
         this.amount = amount;
