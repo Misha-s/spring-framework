@@ -1,5 +1,6 @@
 package com.tomato.bootstrap;
 
+import com.tomato.repository.CourseRepository;
 import com.tomato.repository.DepartmentRepository;
 import com.tomato.repository.EmployeeRepository;
 import com.tomato.repository.RegionRepository;
@@ -12,11 +13,14 @@ public class DataGenerator implements CommandLineRunner {
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
 
+    private final CourseRepository courseRepository;
+
     private final EmployeeRepository employeeRepository;
 
-    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
+    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, CourseRepository courseRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
+        this.courseRepository = courseRepository;
         this.employeeRepository = employeeRepository;
     }
 
@@ -57,9 +61,25 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println("---------Employee JPQL start-----------");
        // System.out.println( employeeRepository.getEmployeeDetail());
       //  System.out.println( employeeRepository.getEmployeeSalary());
-        System.out.println(employeeRepository.getEmployeeDetail("dtrail8@tamu.edu").get());
+        //System.out.println(employeeRepository.getEmployeeDetail("dtrail8@tamu.edu").get());
+
+        //employeeRepository.getEmployeeSalaryNotEqual(75900).forEach(System.out::println);
+       // System.out.println( employeeRepository.getEmployeeFirstNameLike("%Mi"));
 
         System.out.println("---------Employee JPQL end-----------");
+
+
+        System.out.println("---------Course start-----------");
+        //courseRepository.findByCategory("Spring").forEach(System.out::println);
+        //courseRepository.findByCategoryOrderByName("Spring").forEach(System.out::println);
+
+        //System.out.println( courseRepository.existsByName("Rapid Spring Boot Application Development"));
+       // System.out.println(courseRepository.countByCategory("Spring"));
+       // courseRepository.findByNameStartsWith("Fully Reactive").forEach(System.out::println);
+        //courseRepository.streamByCategory("Spring").forEach(System.out::println);
+
+
+        System.out.println("---------Course end-----------");
 
 
 
